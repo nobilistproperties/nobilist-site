@@ -7,26 +7,32 @@ public_folder: "/assets"
 
 collections:
   - name: "settings"
-    label: "Site Ayarları"
+    label: "Global Site Settings"
     files:
       - file: "admin/content.json"
-        label: "Görsel ve İçerik Yönetimi"
+        label: "Hero & Brand Content"
         name: "content"
         fields:
-          - {label: "Arka Plan Görseli (Gece Boğazı)", name: "background_image", widget: "image"}
-          - {label: "Ana Başlık (İngilizce)", name: "hero_title", widget: "string", required: false}
+          - {label: "Hero Background Image", name: "background_image", widget: "image"}
+          - {label: "Main Title (English)", name: "hero_title_en", widget: "string"}
+          - {label: "Main Title (Turkish)", name: "hero_title_tr", widget: "string"}
+          - {label: "Brand Description (English)", name: "desc_en", widget: "text"}
+          - {label: "Brand Description (Turkish)", name: "desc_tr", widget: "text"}
 
       - file: "admin/portfolios.json"
-        label: "Lüks Portföy Yönetimi"
+        label: "Premium Portfolio Management"
         name: "portfolios_list"
         fields:
-          - label: "Yatırım Portföyleri"
+          - label: "Investment Real Estate List"
             name: "items"
             widget: "list"
             fields:
-              - {label: "İlan Başlığı", name: "title", widget: "string"}
-              - {label: "Fiyat ($ ya da ₺)", name: "price", widget: "string"}
-              - {label: "Konum (Örn: Bebek / Beşiktaş)", name: "location", widget: "string"}
-              - {label: "Oda / Metrekare Detayı", name: "details", widget: "string"}
-              - {label: "Kapak Fotoğrafı", name: "thumbnail", widget: "image"}
-              - {label: "İlan Kısa Açıklaması", name: "description", widget: "text"}
+              - {label: "Property Title (English)", name: "title_en", widget: "string"}
+              - {label: "Property Title (Turkish)", name: "title_tr", widget: "string"}
+              - {label: "Price (e.g. $2,500,000)", name: "price", widget: "string"}
+              - {label: "Location (English - e.g. Bebek, Bosphorus)", name: "location_en", widget: "string"}
+              - {label: "Location (Turkish - e.g. Bebek, Boğaziçi)", name: "location_tr", widget: "string"}
+              - {label: "Specifications (e.g. 5+2 / 450 sqm)", name: "details", widget: "string"}
+              - {label: "Cover Image", name: "thumbnail", widget: "image"}
+              - {label: "Detailed Description (English)", name: "description_en", widget: "text"}
+              - {label: "Detailed Description (Turkish)", name: "description_tr", widget: "text"}
