@@ -86,6 +86,78 @@ Error generating stack: `+l.message+`
       defer
       src="https://manus-analytics.com/umami"
       data-website-id="faef469e-e995-4a08-893c-65667c16d289"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. ARKA PLAN FOTOĞRAFINI VE BAŞLIĞI PANELDEKİYLE EZME MOTORU
+      fetch('/admin/content.json')
+        .then(res => res.json())
+        .then(data => {
+          if(data.background_image) {
+            const style = document.createElement('style');
+            style.innerHTML = `
+              body, header, section, .hero, [class*="hero"], [class*="background"] {
+                background-image: url('${data.background_image}') !important;
+                background-size: cover !important;
+                background-position: center !important;
+              }
+            `;
+            document.head.appendChild(style);
+          }
+          if(data.hero_title) {
+            const h1 = document.querySelector('h1');
+            if(h1) h1.innerText = data.hero_title;
+          }
+        }).catch(err => console.log("Ayarlar yükleniyor..."));
+
+      // 2. LÜKS PORTFÖYLERİ SİTENİN ALTINA OTOMATİK ENJEKTE ETME MOTORU
+      fetch('/admin/portfolios.json')
+        .then(res => res.json())
+        .then(data => {
+          if(data.items && data.items.length > 0) {
+            const portfolioSection = document.createElement('section');
+            portfolioSection.id = "nobilist-lux-portfolios";
+            portfolioSection.style.cssText = "padding: 80px 20px; background-color: #0d0e12; color: #ffffff; font-family: 'Helvetica Neue', Arial, sans-serif; border-top: 1px solid #222;";
+            
+            let cardsHTML = `
+              <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; font-size: 2.3rem; margin-bottom: 15px; color: #c5a880; font-weight: 300; letter-spacing: 3px; text-transform: uppercase;">PREMIUM PORTFÖYLERİMİZ</h2>
+                <p style="text-align: center; color: #888; font-size: 1rem; margin-bottom: 50px; font-style: italic;">Seçkin Yatırım Fırsatları ve Lüks Yaşam Alanları</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+            `;
+
+            data.items.forEach(item => {
+              cardsHTML += `
+                <div style="background: #14161d; border: 1px solid #1c1e24; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s ease;">
+                  <div style="position: relative; height: 240px; overflow:hidden;">
+                    <img src="${item.thumbnail || '/assets/logo.png'}" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div style="padding: 25px;">
+                    <h3 style="margin: 0 0 12px 0; color: #ffffff; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.5px;">${item.title}</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #1c1e24; padding-bottom: 12px;">
+                      <span style="color: #c5a880; font-weight: 600; font-size: 1.25rem;">${item.price}</span>
+                      <span style="color: #8aa1bc; font-size: 0.85rem; background: rgba(138,161,188,0.1); padding: 4px 8px; border-radius: 2px;">📍 ${item.location}</span>
+                    </div>
+                    <p style="margin: 0 0 15px 0; color: #a4a7ab; font-size: 0.85rem; font-weight: 500;">📐 ${item.details}</p>
+                    <p style="margin: 0; color: #cbced4; font-size: 0.9rem; line-height: 1.6; font-weight: 300;">${item.description}</p>
+                  </div>
+                </div>
+              `;
+            });
+
+            cardsHTML += `</div></div>`;
+            portfolioSection.innerHTML = cardsHTML;
+
+            // Sitede footer varsa hemen üstüne ekler, yoksa sayfa sonuna ekler
+            const footer = document.querySelector('footer') || document.querySelector('[class*="footer"]');
+            if(footer) {
+              footer.parentNode.insertBefore(portfolioSection, footer);
+            } else {
+              document.body.appendChild(portfolioSection);
+            }
+          }
+        }).catch(err => console.log("Portföyler yükleniyor..."));
+    });
+  </script>
   </body>
 
 </html>
