@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "settings"
+    label: "Site Ayarları"
+    files:
+      - file: "admin/content.json"
+        label: "Görsel ve İçerik Yönetimi"
+        name: "content"
+        fields:
+          - {label: "Arka Plan Görseli (Gece Boğazı)", name: "background_image", widget: "image"}
+          - {label: "Ana Başlık (İngilizce)", name: "hero_title", widget: "string", required: false}
