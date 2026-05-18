@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobilist Properties | Luxury Real Estate Investment Istanbul</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a880;
+            --gold-light: #e0c5a1;
+            --dark-bg: #07080a;
+            --card-bg: #0f1116;
+            --border: #171a22;
+            --text-light: #f5f6f8;
+            --text-muted: #848a98;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: var(--text-light); overflow-x: hidden; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .brand-font { font-family: 'Cinzel', serif; font-weight: 400; letter-spacing: 2px; }
+
+        /* Navigation Bar */
+        header { position: fixed; top: 0; width: 100%; padding: 35px 6%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(to bottom, rgba(7,8,10,0.8) 0%, rgba(7,8,10,0) 100%); transition: all 0.4s ease; }
+        header.scrolled { background: rgba(7,8,10,0.95); padding: 20px 6%; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); }
+        .logo { font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 4px; }
+        .logo span { color: var(--gold); }
+        .nav-right { display: flex; align-items: center; gap: 45px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 400; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        
+        /* Premium Dil Seçici */
+        .lang-switcher { display: flex; gap: 8px; border-left: 1px solid var(--border); padding-left: 25px; }
+        .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 11px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 500; transition: all 0.3s; padding: 2px 6px; }
+        .lang-btn.active { color: var(--dark-bg); background-color: var(--gold); font-weight: 600; border-radius: 2px; }
+
+        /* Hero Kapak Alanı */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; background-color: #050608; background-size: cover; background-position: center; }
+        .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(7,8,10,0.4) 0%, rgba(7,8,10,0.85) 100%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1100px; padding: 0 20px; }
+        .hero-subtitle { font-size: 11px; letter-spacing: 7px; text-transform: uppercase; color: var(--gold); margin-bottom: 30px; display: block; font-weight: 300; }
+        .hero-title { font-size: 3.5rem; line-height: 1.3; margin-bottom: 40px; color: #fff; font-weight: 400; text-transform: uppercase; }
+        .cta-btn { display: inline-block; padding: 18px 40px; border: 1px solid var(--gold); color: #fff; text-decoration: none; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: rgba(0,0,0,0.3); }
+        .cta-btn:hover { background: var(--gold); color: var(--dark-bg); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197,168,128,0.2); }
+
+        /* Felsefe / Hakkımızda Bölümü */
+        .philosophy-section { padding: 150px 10%; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .philosophy-section h2 { font-size: 2.3rem; color: var(--gold); margin-bottom: 35px; text-transform: uppercase; }
+        .philosophy-section p { font-size: 1.15rem; line-height: 2; color: var(--text-muted); font-weight: 300; }
+
+        /* Portföy Vitrini */
+        .portfolio-section { padding: 120px 6%; background: #0b0c12; border-top: 1px solid var(--border); }
+        .section-intro { text-align: center; margin-bottom: 90px; }
+        .section-intro h2 { font-size: 2.6rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px; }
+        .section-intro p { color: var(--text-muted); font-style: italic; font-size: 1.05rem; font-weight: 300; }
+        
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 45px; max-width: 1400px; margin: 0 auto; }
+        .portfolio-card { background: var(--card-bg); border: 1px solid var(--border); overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .portfolio-card:hover { transform: translateY(-12px); border-color: var(--gold); box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
+        .img-wrapper { width: 100%; height: 290px; overflow: hidden; position: relative; background-color: #050608; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .portfolio-card:hover .img-wrapper img { transform: scale(1.06); }
+        
+        .card-body { padding: 40px 35px; }
+        .card-title { font-size: 1.45rem; margin-bottom: 15px; color: #fff; font-weight: 500; line-height: 1.4; }
+        .card-price { font-size: 1.35rem; color: var(--gold); font-weight: 400; display: block; margin-bottom: 25px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+        .card-meta { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; font-weight: 300; letter-spacing: 0.5px; }
+        .card-desc { font-size: 0.9rem; color: #a2a7b4; line-height: 1.8; font-weight: 300; }
+
+        /* Premium İletişim Form Alanı */
+        .contact-section { padding: 120px 6%; text-align: center; background: var(--dark-bg); border-top: 1px solid var(--border); }
+        .contact-container { max-width: 600px; margin: 0 auto; }
+        .contact-section h2 { font-size: 2.3rem; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
+        .contact-section p { color: var(--text-muted); margin-bottom: 40px; font-weight: 300; font-size: 0.95rem; }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 16px; background: var(--card-bg); border: 1px solid var(--border); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 13px; transition: border-color 0.3s; }
+        .form-control:focus { outline: none; border-color: var(--gold); }
+        .submit-btn { width: 100%; padding: 18px; background: none; border: 1px solid var(--gold); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+        .submit-btn:hover { background: var(--gold); color: var(--dark-bg); }
+
+        /* Footer */
+        footer { padding: 80px 6% 40px 6%; background: #050608; border-top: 1px solid var(--border); text-align: center; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 5px; margin-bottom: 20px; text-transform: uppercase; color: #fff; }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; margin-bottom: 50px; letter-spacing: 1px; }
+        .copyright { font-size: 0.75rem; color: #3b3e46; letter-spacing: 1px; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.2rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="main-header">
+    <a href="#" class="logo">Nobilist<span>Properties</span></a>
+    <div class="nav-right">
+        <nav class="nav-links">
+            <a href="#hero" id="nav-home">Home</a>
+            <a href="#properties" id="nav-prop">Properties</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="switchLanguage('tr')">TR</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <span class="hero-subtitle" id="hero-sub-text">Bespoke Real Estate Advisory</span>
+        <h1 class="hero-title" id="hero-main-title">Exclusive Portfolios</h1>
+        <a href="#properties" class="cta-btn" id="hero-cta">Discover Assets</a>
+    </div>
+</section>
+
+<section class="philosophy-section">
+    <h2 id="about-title">Our Philosophy</h2>
+    <p id="about-desc">Curating architectural masterpieces and high-yielding real estate investments in Istanbul for distinguished global citizens.</p>
+</section>
+
+<section class="portfolio-section" id="properties">
+    <div class="section-intro">
+        <h2 id="section-title">Premium Portfolios</h2>
+        <p id="section-subtitle">Private and confidential listings</p>
+    </div>
+    <div class="portfolio-grid" id="portfolio-display">
+        </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <h2 id="contact-title">Exclusive Consultation</h2>
+        <p id="contact-p">Connect with our private advisors for confidential portfolio access.</p>
+        <form onsubmit="event.preventDefault(); alert('Inquiry received.');">
+            <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" id="f-name"></div>
+            <div class="form-group"><input type="email" class="form-control" placeholder="Email Address" id="f-email"></div>
+            <div class="form-group"><textarea class="form-control" rows="4" placeholder="Your Message" id="f-msg"></textarea></div>
+            <button type="submit" class="submit-btn" id="f-btn">Submit Inquiry</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">Nobilist Properties</div>
+    <p class="footer-text" id="footer-pitch">Istanbul's premier investment gate.</p>
+    <div class="copyright">&copy; 2026 Nobilist Properties. All Rights Reserved.</div>
+</footer>
+
+<script>
+    let currentLang = localStorage.getItem('nobilist_lang') || 'en';
+    let globalContent = {};
+    let portfolioData = [];
+
+    // Global Dil Sözlüğü
+    const dictionary = {
+        en: {
+            home: "Home", properties: "Properties", contact: "Contact", sub: "Bespoke Real Estate Advisory",
+            cta: "Discover Assets", philosophy: "Our Philosophy", 
+            introTitle: "Premium Portfolios", introSub: "Private and confidential listings",
+            contactTitle: "Exclusive Consultation", contactP: "Connect with our private advisors for confidential portfolio access.",
+            fName: "Full Name", fEmail: "Email Address", fMsg: "Your Message", fBtn: "Submit Inquiry",
+            pitch: "Istanbul's premier investment gate.", noAsset: "No exclusive portfolios available at the moment."
+        },
+        tr: {
+            home: "Anasayfa", properties: "Portföyler", contact: "İletişim", sub: "Kişiye Özel Gayrimenkul Danışmanlığı",
+            cta: "Mülkleri İnceleyin", philosophy: "Vizyonumuz", 
+            introTitle: "Seçkin Portföyler", introSub: "Yüksek yatırım değerli gizli ilanlar",
+            contactTitle: "Özel Danışmanlık", contactP: "Gizli portföy erişimi için özel danışmanlarımızla iletişime geçin.",
+            fName: "Adınız Soyadınız", fEmail: "E-posta Adresiniz", fMsg: "Mesajınız", fBtn: "Başvuruyu Gönder",
+            pitch: "İstanbul'un prestijli yatırım kapısı.", noAsset: "Şu anda listelenen özel portföy bulunmamaktadır."
+        }
+    };
+
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+    });
+
+    function applyLanguageUI() {
+        const dict = dictionary[currentLang];
+        document.getElementById('nav-home').innerText = dict.home;
+        document.getElementById('nav-prop').innerText = dict.properties;
+        document.getElementById('nav-contact').innerText = dict.contact;
+        document.getElementById('hero-sub-text').innerText = dict.sub;
+        document.getElementById('hero-cta').innerText = dict.cta;
+        document.getElementById('about-title').innerText = dict.philosophy;
+        document.getElementById('section-title').innerText = dict.introTitle;
+        document.getElementById('section-subtitle').innerText = dict.introSub;
+        document.getElementById('contact-title').innerText = dict.contactTitle;
+        document.getElementById('contact-p').innerText = dict.contactP;
+        document.getElementById('f-name').placeholder = dict.fName;
+        document.getElementById('f-email').placeholder = dict.fEmail;
+        document.getElementById('f-msg').placeholder = dict.fMsg;
+        document.getElementById('f-btn').innerText = dict.fBtn;
+        document.getElementById('footer-pitch').innerText = dict.pitch;
+
+        if(globalContent) {
+            document.getElementById('hero-main-title').innerText = globalContent[`hero_title_${currentLang}`] || "Exclusive Portfolios";
+            document.getElementById('about-desc').innerText = globalContent[`desc_${currentLang}`] || "";
+        }
+
+        renderPortfolios();
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.innerText.toLowerCase() === currentLang);
+        });
+    }
+
+    function switchLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('nobilist_lang', lang);
+        applyLanguageUI();
+    }
+
+    function initDataEngine() {
+        // Content CMS Loader
+        fetch('/admin/content.json')
+            .then(res => res.json())
+            .then(data => {
+                globalContent = data;
+                if(data.background_image) {
+                    document.getElementById('hero').style.backgroundImage = `url('${data.background_image}')`;
+                }
+                applyLanguageUI();
+            }).catch(e => console.log("Initializing core stream..."));
+
+        // Portfolio CMS Loader
+        fetch('/admin/portfolios.json')
+            .then(res => res.json())
+            .then(data => {
+                portfolioData = data.items || [];
+                renderPortfolios();
+            }).catch(e => console.log("Portfolio db online..."));
+    }
+
+    function renderPortfolios() {
+        const container = document.getElementById('portfolio-display');
+        if(!container) return;
+        
+        if(portfolioData.length === 0) {
+            container.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color:var(--text-muted); font-style:italic; padding: 40px 0;">${dictionary[currentLang].noAsset}</p>`;
+            return;
+        }
+
+        container.innerHTML = '';
+        portfolioData.forEach(item => {
+            const title = item[`title_${currentLang}`] || item.title_en;
+            const loc = item[`location_${currentLang}`] || item.location_en;
+            const desc = item[`description_${currentLang}`] || item.description_en;
+
+            container.innerHTML += `
+                <article class="portfolio-card">
+                    <div class="img-wrapper">
+                        <img src="${item.thumbnail || '/assets/logo.png'}" alt="${title}">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title brand-font">${title}</h3>
+                        <span class="card-price">${item.price}</span>
+                        <div class="card-meta">
+                            <span>📍 ${loc}</span>
+                            <span>📐 ${item.details}</span>
+                        </div>
+                        <p class="card-desc">${desc || ''}</p>
+                    </div>
+                </article>
+            `;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", initDataEngine);
+</script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>
