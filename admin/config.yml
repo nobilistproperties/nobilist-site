@@ -16,15 +16,17 @@ collections:
           - {label: "Arka Plan Görseli (Gece Boğazı)", name: "background_image", widget: "image"}
           - {label: "Ana Başlık (İngilizce)", name: "hero_title", widget: "string", required: false}
 
-  - name: "portfolios"
-    label: "Lüks Portföyler"
-    folder: "portfolios"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "İlan Başlığı (Örn: Bebek'te Yalı Dairesi)", name: "title", widget: "string"}
-      - {label: "Fiyat ($ veya ₺)", name: "price", widget: "string"}
-      - {label: "Konum", name: "location", widget: "string"}
-      - {label: "Oda Sayısı / m²", name: "details", widget: "string"}
-      - {label: "Kapak Fotoğrafı", name: "thumbnail", widget: "image"}
-      - {label: "Öne Çıkan Özellikler ve İlan Açıklaması", name: "body", widget: "markdown"}
+      - file: "admin/portfolios.json"
+        label: "Lüks Portföy Yönetimi"
+        name: "portfolios_list"
+        fields:
+          - label: "Yatırım Portföyleri"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "İlan Başlığı", name: "title", widget: "string"}
+              - {label: "Fiyat ($ ya da ₺)", name: "price", widget: "string"}
+              - {label: "Konum (Örn: Bebek / Beşiktaş)", name: "location", widget: "string"}
+              - {label: "Oda / Metrekare Detayı", name: "details", widget: "string"}
+              - {label: "Kapak Fotoğrafı", name: "thumbnail", widget: "image"}
+              - {label: "İlan Kısa Açıklaması", name: "description", widget: "text"}
