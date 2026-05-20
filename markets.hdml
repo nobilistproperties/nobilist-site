@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="site_title">Nobilist Properties | Markets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-darker">
+
+    <header id="main-header" class="scrolled">
+        <a href="index.html" class="logo">
+            <img src="assets/nobilist-logo.png" alt="Nobilist Properties" class="brand-logo">
+        </a>
+        
+        <div class="nav-right desktop-nav">
+            <nav class="nav-links">
+                <a href="index.html#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+                <a href="index.html#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+                <a href="markets.html" data-i18n="nav_markets" style="color:var(--gold);">Markets</a>
+                <a href="index.html#citizenship" data-i18n="nav_citizenship">Citizenship</a>
+                <a href="index.html#contact" data-i18n="nav_advisory">Private Advisory</a>
+            </nav>
+            
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="tr">TR</button>
+            </div>
+            
+            <button class="btn-outline header-btn" onclick="openModal('contactModal')" data-i18n="btn_inquire">Inquire</button>
+        </div>
+    </header>
+
+    <section class="markets section-padding" style="margin-top: 100px;">
+        <div class="container reveal active">
+            <div class="section-header text-center">
+                <h1 class="section-title" data-i18n="mk_title" style="font-size: 3rem;">Investment Markets</h1>
+                <div class="divider mx-auto"></div>
+                <p class="subtitle mt-3" style="color:var(--text-muted); max-width:800px; margin: 0 auto;">Discover the most strategic investment regions in Turkey, from Istanbul's prime commercial hubs to the exclusive Riviera.</p>
+            </div>
+            
+            <div class="grid grid-2 mt-4" style="gap: 50px;">
+                <div class="market-card" style="height: 450px;">
+                    <img src="assets/istanbul-bosphorus-fallback.jpg" alt="Istanbul">
+                    <div class="market-overlay" style="background: linear-gradient(to top, rgba(5,5,7,1) 10%, rgba(5,5,7,0.4) 60%, transparent);">
+                        <h3 data-i18n="mk_1_t" style="font-size: 2rem;">Istanbul</h3>
+                        <p data-i18n="mk_1_d" style="font-size: 1.1rem; opacity: 1; transform: none; margin-bottom: 20px;">The commercial and cultural heart of the region. A dynamic hub for luxury real estate and corporate assets.</p>
+                        <button class="btn-text" onclick="window.location.href='index.html#portfolio'">View Istanbul Portfolio →</button>
+                    </div>
+                </div>
+                
+                <div class="market-card" style="height: 450px;">
+                    <img src="assets/aegean-villa-pool.jpg" alt="Bodrum">
+                    <div class="market-overlay" style="background: linear-gradient(to top, rgba(5,5,7,1) 10%, rgba(5,5,7,0.4) 60%, transparent);">
+                        <h3 data-i18n="mk_5_t" style="font-size: 2rem;">Bodrum</h3>
+                        <p data-i18n="mk_5_d" style="font-size: 1.1rem; opacity: 1; transform: none; margin-bottom: 20px;">The Riviera's most exclusive resort destination. Prime villas and hospitality investments.</p>
+                        <button class="btn-text" onclick="window.location.href='index.html#portfolio'">View Bodrum Portfolio →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Nobilist Properties. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
