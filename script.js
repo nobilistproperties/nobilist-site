@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Reveal only once
+            observer.unobserve(entry.target); 
         });
     }, revealOptions);
 
@@ -63,6 +63,7 @@ function openModal(modalId) {
     }
 }
 
+// Global modal kapatıcı
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if(modal) {
@@ -73,7 +74,6 @@ function closeModal(modalId) {
 
 // --- 6. DYNAMIC PROPERTY MODAL ---
 function openPropertyModal(title, loc, price, type, size, desc, imgSrc) {
-    // Populate the modal fields
     document.getElementById('pm-title').innerText = title;
     document.getElementById('pm-loc').innerText = loc;
     document.getElementById('pm-price').innerText = price;
@@ -82,21 +82,19 @@ function openPropertyModal(title, loc, price, type, size, desc, imgSrc) {
     document.getElementById('pm-desc').innerText = desc;
     document.getElementById('pm-img').src = imgSrc;
 
-    // Dynamically update the WhatsApp link to include the specific property title
+    // Telefon numaran buraya dinamik mesaj şablonuyla gömüldü
     const encodedMessage = encodeURIComponent(`Hello Nobilist, I would like to request the full dossier for the ${title} property.`);
-    const waLink = `https://wa.me/905000000000?text=${encodedMessage}`;
+    const waLink = `https://wa.me/905300917796?text=${encodedMessage}`;
     document.getElementById('pm-wa-link').href = waLink;
 
-    // Open the modal
     openModal('propertyModal');
 }
 
 // --- 7. FORM VALIDATION & SUBMISSION ---
 function validateAndSubmit(event, successDivId) {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault(); 
     const form = event.target;
     
-    // Simple Email Regex check
     const emailInput = form.querySelector('input[type="email"]');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
@@ -105,7 +103,6 @@ function validateAndSubmit(event, successDivId) {
         return;
     }
 
-    // Hide form button, show success message
     const submitBtn = form.querySelector('button[type="submit"]');
     const successDiv = document.getElementById(successDivId);
     
@@ -114,7 +111,6 @@ function validateAndSubmit(event, successDivId) {
         successDiv.style.display = 'block';
         form.reset();
         
-        // Reset the form UI after 5 seconds
         setTimeout(() => {
             successDiv.style.display = 'none';
             if(submitBtn) submitBtn.style.display = 'block';
