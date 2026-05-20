@@ -6,6 +6,8 @@
     <title data-i18n="site_title">Nobilist Properties | Exclusive Real Estate & Wealth Advisory</title>
     <meta name="description" content="Premium real estate, luxury villas, commercial properties, and advisory for global high-net-worth investors.">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
@@ -34,7 +36,7 @@
             <button class="btn-outline header-btn" onclick="openModal('contactModal')" data-i18n="btn_inquire">Inquire</button>
         </div>
 
-        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
             <span></span><span></span><span></span>
         </div>
     </header>
@@ -48,7 +50,7 @@
             <a href="#legal" onclick="toggleMobileMenu()" data-i18n="nav_legal">Legal</a>
             <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_advisory">Private Advisory</a>
             <div class="mobile-langs mt-4">
-                <span class="active lang-btn-mob" data-lang="en">EN</span> | <span class="lang-btn-mob" data-lang="tr">TR</span>
+                <span class="lang-btn-mob active" data-lang="en">EN</span> | <span class="lang-btn-mob" data-lang="tr">TR</span>
             </div>
         </div>
     </div>
@@ -88,19 +90,11 @@
                 </div>
             </div>
             
-            <div class="grid grid-4 mt-4 reveal">
-                <div class="premium-card">
-                    <h4 data-i18n="phil_c1_t">Selected Opportunities</h4>
-                </div>
-                <div class="premium-card">
-                    <h4 data-i18n="phil_c2_t">Strategic Perspective</h4>
-                </div>
-                <div class="premium-card">
-                    <h4 data-i18n="phil_c3_t">Discreet Advisory</h4>
-                </div>
-                <div class="premium-card">
-                    <h4 data-i18n="phil_c4_t">Long-Term Value</h4>
-                </div>
+            <div class="grid grid-4 mt-4 reveal delay-1">
+                <div class="premium-card"><h4 data-i18n="phil_c1_t">Selected Opportunities</h4></div>
+                <div class="premium-card"><h4 data-i18n="phil_c2_t">Strategic Perspective</h4></div>
+                <div class="premium-card"><h4 data-i18n="phil_c3_t">Discreet Advisory</h4></div>
+                <div class="premium-card"><h4 data-i18n="phil_c4_t">Long-Term Value</h4></div>
             </div>
         </div>
     </section>
@@ -198,7 +192,7 @@
                     </div>
                 </div>
                 <div class="market-card">
-                    <img src="assets/commercial-property-istanbul.jpg" alt="Commercial">
+                    <img src="assets/commercial-property-istanbul.jpg" alt="Commercial Real Estate">
                     <div class="market-overlay">
                         <h3 data-i18n="mk_9_t">Commercial Real Estate</h3>
                         <p data-i18n="mk_9_d">Institutional-grade offices and retail spaces.</p>
@@ -273,7 +267,7 @@
                 </div>
 
                 <div class="property-card reveal delay-1" onclick="openPropertyModal('Hisarönü Valley View Villa', 'Marmaris, Muğla', '€2,400,000', 'Estate', '500 m²', 'Expansive valley views with extreme privacy, helipad potential, and a large infinity pool.', 'assets/aegean-villa-pool.jpg')">
-                    <div class="card-img"><img src="assets/aegean-villa-pool.jpg" alt="Hisaronu"></div>
+                    <div class="card-img"><img src="assets/aegean-villa-pool.jpg" alt="Hisarönü"></div>
                     <div class="card-body">
                         <h3 data-i18n="prop5_t">Hisarönü Valley View Villa</h3>
                         <p class="location" data-i18n="prop5_l">Marmaris, Muğla</p>
@@ -284,7 +278,7 @@
 
                 <div class="property-card reveal delay-2" onclick="openPropertyModal('Boutique Hotel Investment', 'Bodrum Peninsula', 'Price Upon Request', 'Commercial / Hospitality', '1200 m²', 'Operating boutique hotel with 18 keys, high occupancy rates, and direct beach access.', 'assets/boutique-hotel-aegean.jpg')">
                     <div class="card-img">
-                        <img src="assets/boutique-hotel-aegean.jpg" alt="Hotel">
+                        <img src="assets/boutique-hotel-aegean.jpg" alt="Boutique Hotel">
                         <div class="badge" data-i18n="badge_offmarket">Off-Market</div>
                     </div>
                     <div class="card-body">
@@ -296,7 +290,7 @@
                 </div>
 
                 <div class="property-card reveal" onclick="openPropertyModal('Prime Commercial Property', 'Levent, Istanbul', '€8,500,000', 'Commercial Office', '1500 m²', 'Grade A office space in Istanbul’s central business district with secure long-term corporate tenants.', 'assets/commercial-property-istanbul.jpg')">
-                    <div class="card-img"><img src="assets/commercial-property-istanbul.jpg" alt="Commercial"></div>
+                    <div class="card-img"><img src="assets/commercial-property-istanbul.jpg" alt="Commercial Office"></div>
                     <div class="card-body">
                         <h3 data-i18n="prop7_t">Prime Commercial Property</h3>
                         <p class="location" data-i18n="prop7_l">Levent, Istanbul</p>
@@ -493,7 +487,7 @@
     <div class="modal" id="propertyModal">
         <div class="modal-overlay" onclick="closeModal('propertyModal')"></div>
         <div class="modal-content modal-lg">
-            <button class="modal-close" onclick="closeModal('propertyModal')">&times;</button>
+            <button class="modal-close" onclick="closeModal('propertyModal')" aria-label="Close">&times;</button>
             <div class="grid grid-2 no-gap h-100 align-center-modal">
                 <div class="modal-image">
                     <img id="pm-img" src="" alt="Property">
@@ -527,7 +521,7 @@
     <div class="modal" id="contactModal">
         <div class="modal-overlay" onclick="closeModal('contactModal')"></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
+            <button class="modal-close" onclick="closeModal('contactModal')" aria-label="Close">&times;</button>
             <h2 class="section-title text-center" data-i18n="mod_cont_title">Private Inquiry</h2>
             <div class="divider mx-auto mb-4"></div>
             <form onsubmit="validateAndSubmit(event, 'modalSuccess')">
@@ -554,7 +548,7 @@
     <div class="modal" id="investmentModal">
         <div class="modal-overlay" onclick="closeModal('investmentModal')"></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('investmentModal')">&times;</button>
+            <button class="modal-close" onclick="closeModal('investmentModal')" aria-label="Close">&times;</button>
             <h2 class="section-title text-center" data-i18n="mod_inv_title">Citizenship Consultation</h2>
             <div class="divider mx-auto mb-3"></div>
             <p class="text-center mb-4" style="color:var(--text-muted); font-size: 0.95rem;" data-i18n="mod_inv_desc">Request a private briefing regarding eligible luxury assets and advisory coordination.</p>
@@ -576,7 +570,7 @@
     <div class="modal" id="legalModal">
         <div class="modal-overlay" onclick="closeModal('legalModal')"></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('legalModal')">&times;</button>
+            <button class="modal-close" onclick="closeModal('legalModal')" aria-label="Close">&times;</button>
             <h2 class="section-title" data-i18n="mod_leg_title">Legal & Compliance</h2>
             <div class="divider mb-4"></div>
             <div class="legal-scroll">
