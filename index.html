@@ -13,15 +13,17 @@
 <body>
 
     <header id="main-header">
-        <a href="#hero" class="logo">Nobilist<span>.</span></a>
+        <a href="#hero" class="logo">
+            <img src="assets/logo.png" alt="Nobilist Properties" class="brand-logo">
+        </a>
         
         <div class="nav-right desktop-nav">
             <nav class="nav-links">
-                <a href="#about">Philosophy</a>
-                <a href="#featured">Portfolio</a>
-                <a href="#areas">Markets</a>
-                <a href="#citizenship">Citizenship</a>
-                <a href="#contact">Private Advisory</a>
+                <a href="#about" data-i18n="nav_about">Philosophy</a>
+                <a href="#featured" data-i18n="nav_portfolio">Portfolio</a>
+                <a href="#areas" data-i18n="nav_markets">Markets</a>
+                <a href="#citizenship" data-i18n="nav_citizenship">Citizenship</a>
+                <a href="#contact" data-i18n="nav_advisory">Private Advisory</a>
             </nav>
             
             <div class="lang-switcher">
@@ -29,7 +31,7 @@
                 <button class="lang-btn" data-lang="tr">TR</button>
             </div>
             
-            <button class="btn-outline header-btn" onclick="openModal('contactModal')">Inquire</button>
+            <button class="btn-outline header-btn" onclick="openModal('contactModal')" data-i18n="btn_inquire">Inquire</button>
         </div>
 
         <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
@@ -39,31 +41,33 @@
 
     <div class="mobile-menu-overlay" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="#about" onclick="toggleMobileMenu()">Philosophy</a>
-            <a href="#featured" onclick="toggleMobileMenu()">Portfolio</a>
-            <a href="#areas" onclick="toggleMobileMenu()">Markets</a>
-            <a href="#citizenship" onclick="toggleMobileMenu()">Citizenship</a>
-            <a href="#contact" onclick="toggleMobileMenu()">Private Advisory</a>
+            <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Philosophy</a>
+            <a href="#featured" onclick="toggleMobileMenu()" data-i18n="nav_portfolio">Portfolio</a>
+            <a href="#areas" onclick="toggleMobileMenu()" data-i18n="nav_markets">Markets</a>
+            <a href="#citizenship" onclick="toggleMobileMenu()" data-i18n="nav_citizenship">Citizenship</a>
+            <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_advisory">Private Advisory</a>
             <div class="mobile-langs mt-4">
-                <span class="active">EN</span> | <span>TR</span> | <span>AR</span> | <span>RU</span>
+                <span class="active lang-btn-mob" data-lang="en">EN</span> | <span class="lang-btn-mob" data-lang="tr">TR</span>
             </div>
         </div>
     </div>
 
     <section class="hero" id="hero">
+        <video src="assets/hero-video.mp4" autoplay loop muted playsinline class="hero-video"></video>
         <div class="hero-overlay"></div>
+        
         <div class="hero-content reveal">
-            <span class="hero-subtitle">Wealth & Real Estate Advisory</span>
-            <h1 class="hero-title">Curating Istanbul's Most Exclusive Assets</h1>
-            <p class="hero-desc">Strategic investment opportunities, waterfront masterpieces, and discrete advisory for global citizens.</p>
+            <span class="hero-subtitle" data-i18n="hero_subtitle">Wealth & Real Estate Advisory</span>
+            <h1 class="hero-title" data-i18n="hero_title">Curating Istanbul's Most Exclusive Assets</h1>
+            <p class="hero-desc" data-i18n="hero_desc">Strategic investment opportunities, waterfront masterpieces, and discrete advisory for global citizens.</p>
             
             <div class="hero-ctas">
-                <a href="#featured" class="btn-primary">Explore The Portfolio</a>
-                <button onclick="openModal('contactModal')" class="btn-outline">Request Private Consultation</button>
+                <a href="#featured" class="btn-primary" data-i18n="hero_cta1">Explore The Portfolio</a>
+                <button onclick="openModal('contactModal')" class="btn-outline" data-i18n="hero_cta2">Request Private Consultation</button>
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <span data-i18n="scroll">Scroll</span>
             <div class="line"></div>
         </div>
     </section>
@@ -72,14 +76,14 @@
         <div class="container reveal">
             <div class="grid grid-2 align-center">
                 <div class="about-text">
-                    <h2 class="section-title">Our Philosophy</h2>
+                    <h2 class="section-title" data-i18n="about_title">Our Philosophy</h2>
                     <div class="divider"></div>
-                    <p>Nobilist Properties operates at the intersection of luxury real estate and wealth preservation. We cater exclusively to high-net-worth individuals, family offices, and international investors seeking unparalleled assets in Turkey.</p>
-                    <p>Beyond transactions, we provide rigorous market intelligence, legal coordination, and a highly discrete acquisition process across the Bosphorus, the Aegean Riviera, and prime commercial districts.</p>
-                    <button class="btn-text mt-3" onclick="openModal('contactModal')">Speak with a Director →</button>
+                    <p data-i18n="about_p1">Nobilist Properties operates at the intersection of luxury real estate and wealth preservation. We cater exclusively to high-net-worth individuals, family offices, and international investors seeking unparalleled assets in Turkey.</p>
+                    <p data-i18n="about_p2">Beyond transactions, we provide rigorous market intelligence, legal coordination, and a highly discrete acquisition process across the Bosphorus, the Aegean Riviera, and prime commercial districts.</p>
+                    <button class="btn-text mt-3" onclick="openModal('contactModal')" data-i18n="about_btn">Speak with a Director →</button>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000" alt="Luxury Interior">
+                    <img src="assets/about-image.jpg" alt="Luxury Interior">
                 </div>
             </div>
         </div>
@@ -88,61 +92,61 @@
     <section class="featured section-padding bg-darker" id="featured">
         <div class="container">
             <div class="section-header text-center reveal">
-                <h2 class="section-title">Exclusive Portfolio</h2>
+                <h2 class="section-title" data-i18n="port_title">Exclusive Portfolio</h2>
                 <div class="divider mx-auto"></div>
-                <p class="subtitle">A curated selection of off-market and premium assets.</p>
+                <p class="subtitle" data-i18n="port_sub">A curated selection of off-market and premium assets.</p>
             </div>
             
             <div class="grid grid-3 mt-4">
-                <div class="property-card reveal" onclick="openPropertyModal('Bosphorus Waterfront Mansion', 'Istanbul, Bosphorus', 'Price Upon Request', 'Waterfront Mansion', '850 m²', 'A rare waterfront masterpiece offering uninterrupted Bosphorus views, private dock, and historic architectural significance.', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800')">
+                <div class="property-card reveal" onclick="openPropertyModal('Bosphorus Waterfront Mansion', 'Istanbul, Bosphorus', 'Price Upon Request', 'Waterfront Mansion', '850 m²', 'A rare waterfront masterpiece offering uninterrupted Bosphorus views, private dock, and historic architectural significance.', 'assets/property-1.jpg')">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Bosphorus Mansion">
-                        <div class="badge">Off-Market</div>
+                        <img src="assets/property-1.jpg" alt="Bosphorus Mansion">
+                        <div class="badge" data-i18n="badge_offmarket">Off-Market</div>
                     </div>
                     <div class="card-body">
-                        <h3>Bosphorus Waterfront Mansion</h3>
-                        <p class="location">Istanbul, Bosphorus</p>
-                        <p class="price">Price Upon Request</p>
+                        <h3 data-i18n="prop1_title">Bosphorus Waterfront Mansion</h3>
+                        <p class="location" data-i18n="prop1_loc">Istanbul, Bosphorus</p>
+                        <p class="price" data-i18n="price_request">Price Upon Request</p>
                         <div class="card-footer">
-                            <span>View Dossier</span>
+                            <span data-i18n="view_dossier">View Dossier</span>
                             <span>→</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="property-card reveal delay-1" onclick="openPropertyModal('Contemporary Aegean Villa', 'Yalıkavak, Bodrum', '€4,200,000', 'Private Villa', '450 m²', 'Architectural triumph featuring an infinity pool, smart home technology, and panoramic sunset views over the Aegean Sea.', 'https://images.unsplash.com/photo-1613490908653-b21bd5a6977e?auto=format&fit=crop&q=80&w=800')">
+                <div class="property-card reveal delay-1" onclick="openPropertyModal('Contemporary Aegean Villa', 'Yalıkavak, Bodrum', '€4,200,000', 'Private Villa', '450 m²', 'Architectural triumph featuring an infinity pool, smart home technology, and panoramic sunset views over the Aegean Sea.', 'assets/property-2.jpg')">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1613490908653-b21bd5a6977e?auto=format&fit=crop&q=80&w=800" alt="Bodrum Villa">
+                        <img src="assets/property-2.jpg" alt="Bodrum Villa">
                     </div>
                     <div class="card-body">
-                        <h3>Contemporary Aegean Villa</h3>
-                        <p class="location">Yalıkavak, Bodrum</p>
+                        <h3 data-i18n="prop2_title">Contemporary Aegean Villa</h3>
+                        <p class="location" data-i18n="prop2_loc">Yalıkavak, Bodrum</p>
                         <p class="price">€4,200,000</p>
                         <div class="card-footer">
-                            <span>View Dossier</span>
+                            <span data-i18n="view_dossier">View Dossier</span>
                             <span>→</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="property-card reveal delay-2" onclick="openPropertyModal('Branded Luxury Penthouse', 'Nişantaşı, Istanbul', '€3,150,000', 'Penthouse', '320 m²', 'Located in the most prestigious district, this branded residence offers 5-star hotel amenities, private terraces, and vibrant city living.', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=800')">
+                <div class="property-card reveal delay-2" onclick="openPropertyModal('Branded Luxury Penthouse', 'Nişantaşı, Istanbul', '€3,150,000', 'Penthouse', '320 m²', 'Located in the most prestigious district, this branded residence offers 5-star hotel amenities, private terraces, and vibrant city living.', 'assets/property-3.jpg')">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=800" alt="Nişantaşı Penthouse">
-                        <div class="badge">Citizenship Eligible</div>
+                        <img src="assets/property-3.jpg" alt="Nişantaşı Penthouse">
+                        <div class="badge" data-i18n="badge_citizen">Citizenship Eligible</div>
                     </div>
                     <div class="card-body">
-                        <h3>Branded Luxury Penthouse</h3>
-                        <p class="location">Nişantaşı, Istanbul</p>
+                        <h3 data-i18n="prop3_title">Branded Luxury Penthouse</h3>
+                        <p class="location" data-i18n="prop3_loc">Nişantaşı, Istanbul</p>
                         <p class="price">€3,150,000</p>
                         <div class="card-footer">
-                            <span>View Dossier</span>
+                            <span data-i18n="view_dossier">View Dossier</span>
                             <span>→</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4 reveal">
-                <button class="btn-outline" onclick="openModal('contactModal')">Request Full Portfolio Access</button>
+                <button class="btn-outline" onclick="openModal('contactModal')" data-i18n="port_btn">Request Full Portfolio Access</button>
             </div>
         </div>
     </section>
@@ -151,92 +155,65 @@
         <div class="container">
             <div class="grid grid-2 align-center">
                 <div class="image-stack reveal">
-                    <img src="https://images.unsplash.com/photo-1541884483733-4f932e6de3c5?auto=format&fit=crop&q=80&w=800" alt="Istanbul Skyline" class="img-back">
+                    <img src="assets/citizenship-bg.jpg" alt="Istanbul Skyline" class="img-back">
                 </div>
                 <div class="citizenship-text reveal delay-1">
-                    <h2 class="section-title">Turkish Citizenship by Investment</h2>
+                    <h2 class="section-title" data-i18n="cit_title">Turkish Citizenship by Investment</h2>
                     <div class="divider"></div>
-                    <p>Acquire a globally respected second passport through strategic real estate acquisition. Nobilist Properties orchestrates the entire lifecycle of the investment.</p>
+                    <p data-i18n="cit_desc">Acquire a globally respected second passport through strategic real estate acquisition. Nobilist Properties orchestrates the entire lifecycle of the investment.</p>
                     <ul class="luxury-list mt-3">
-                        <li>Curation of officially eligible, high-yield assets.</li>
-                        <li>Coordination with top-tier legal and valuation experts.</li>
-                        <li>Seamless title deed transfer and application tracking.</li>
-                        <li>Post-acquisition asset management and rental positioning.</li>
+                        <li data-i18n="cit_li1">Curation of officially eligible, high-yield assets.</li>
+                        <li data-i18n="cit_li2">Coordination with top-tier legal and valuation experts.</li>
+                        <li data-i18n="cit_li3">Seamless title deed transfer and application tracking.</li>
+                        <li data-i18n="cit_li4">Post-acquisition asset management and rental positioning.</li>
                     </ul>
                     <div class="cta-group mt-4">
-                        <button class="btn-primary" onclick="openModal('investmentModal')">Schedule Briefing</button>
-                        <button class="btn-text ml-2" onclick="openModal('legalModal')">View Legal Parameters</button>
+                        <button class="btn-primary" onclick="openModal('investmentModal')" data-i18n="cit_btn1">Schedule Briefing</button>
+                        <button class="btn-text ml-2" onclick="openModal('legalModal')" data-i18n="cit_btn2">View Legal Parameters</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="services section-padding bg-darker" id="areas">
-        <div class="container">
-            <div class="section-header text-center reveal">
-                <h2 class="section-title">Areas of Expertise</h2>
-                <div class="divider mx-auto"></div>
-            </div>
-            <div class="grid grid-3 mt-4">
-                <div class="service-card reveal">
-                    <span class="service-icon">01</span>
-                    <h3>Prime Residential</h3>
-                    <p>Securing legacy assets including Bosphorus yalıs, branded residences, and ultra-luxury penthouses in Istanbul's most coveted neighborhoods.</p>
-                </div>
-                <div class="service-card reveal delay-1">
-                    <span class="service-icon">02</span>
-                    <h3>Aegean Retreats</h3>
-                    <p>Acquiring private villas and expansive coastal estates across Bodrum, Marmaris, and Akyaka for lifestyle and seasonal yield.</p>
-                </div>
-                <div class="service-card reveal delay-2">
-                    <span class="service-icon">03</span>
-                    <h3>Commercial & Hospitality</h3>
-                    <p>Identifying institutional-grade commercial spaces and boutique hotel investments with strong capitalization rates.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact section-padding" id="contact">
+    <section class="contact section-padding bg-darker" id="contact">
         <div class="container reveal">
             <div class="contact-box glass-panel">
                 <div class="grid grid-2">
                     <div class="contact-info">
-                        <h2>Initiate a Dialogue</h2>
+                        <h2 data-i18n="cont_title">Initiate a Dialogue</h2>
                         <div class="divider"></div>
-                        <p class="mb-4">Discretion and precision define our advisory. Share your acquisition parameters, and a Senior Director will reach out to schedule a private consultation.</p>
+                        <p class="mb-4" data-i18n="cont_desc">Discretion and precision define our advisory. Share your acquisition parameters, and a Senior Director will reach out to schedule a private consultation.</p>
                         
                         <div class="contact-details">
-                            <p><strong>Headquarters:</strong> Istanbul, Turkey</p>
+                            <p><strong data-i18n="cont_hq">Headquarters:</strong> Istanbul, Turkey</p>
                             <p><strong>Email:</strong> <a href="mailto:advisory@nobilistproperties.com">advisory@nobilistproperties.com</a></p>
-                            <p><strong>Direct:</strong> <a href="https://wa.me/905300917796" target="_blank">+90 530 091 77 96</a></p>
+                            <p><strong>Direct:</strong> <a href="https://wa.me/905300917796" target="_blank" rel="noopener noreferrer">+90 530 091 77 96</a></p>
                         </div>
                     </div>
                     
                     <div class="contact-form">
                         <form id="contactForm" onsubmit="validateAndSubmit(event, 'mainFormSuccess')">
                             <div class="input-line">
-                                <input type="text" id="fname" placeholder="Full Name" required>
+                                <input type="text" id="fname" data-i18n-placeholder="form_name" placeholder="Full Name" required>
                             </div>
                             <div class="input-line">
-                                <input type="email" id="femail" placeholder="Corporate or Private Email" required>
+                                <input type="email" id="femail" data-i18n-placeholder="form_email" placeholder="Corporate or Private Email" required>
                             </div>
                             <div class="input-line">
                                 <select id="finterest" required>
-                                    <option value="" disabled selected>Primary Interest</option>
-                                    <option value="Luxury Acquisition">Luxury Acquisition</option>
-                                    <option value="Citizenship Program">Citizenship Program</option>
-                                    <option value="Commercial Investment">Commercial Investment</option>
-                                    <option value="Portfolio Sale">Portfolio Sale</option>
+                                    <option value="" disabled selected data-i18n="form_opt_default">Primary Interest</option>
+                                    <option value="Luxury Acquisition" data-i18n="form_opt1">Luxury Acquisition</option>
+                                    <option value="Citizenship Program" data-i18n="form_opt2">Citizenship Program</option>
+                                    <option value="Commercial Investment" data-i18n="form_opt3">Commercial Investment</option>
                                 </select>
                             </div>
                             <div class="input-line">
-                                <textarea id="fmessage" rows="1" placeholder="Brief outline of your requirements..." required></textarea>
+                                <textarea id="fmessage" rows="1" data-i18n-placeholder="form_msg" placeholder="Brief outline of your requirements..." required></textarea>
                             </div>
-                            <button type="submit" class="btn-primary w-100 mt-3">Submit Inquiry</button>
+                            <button type="submit" class="btn-primary w-100 mt-3" data-i18n="form_submit">Submit Inquiry</button>
                         </form>
-                        <div id="mainFormSuccess" class="form-success-msg" style="display:none;">
+                        <div id="mainFormSuccess" class="form-success-msg" style="display:none;" data-i18n="form_success">
                             Your inquiry has been securely received. A director will contact you shortly.
                         </div>
                     </div>
@@ -249,41 +226,40 @@
         <div class="container reveal">
             <div class="grid grid-4 footer-top">
                 <div class="footer-brand">
-                    <a href="#hero" class="logo">Nobilist<span>.</span></a>
-                    <p class="mt-2">Istanbul's premier real estate investment gateway for the global elite.</p>
+                    <img src="assets/logo.png" alt="Nobilist" class="brand-logo" style="max-height: 30px;">
+                    <p class="mt-2" data-i18n="foot_desc">Istanbul's premier real estate investment gateway for the global elite.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <a href="#about">Philosophy</a>
-                    <a href="#featured">Portfolio</a>
-                    <a href="#citizenship">Citizenship</a>
+                    <h4 data-i18n="foot_nav">Navigation</h4>
+                    <a href="#about" data-i18n="nav_about">Philosophy</a>
+                    <a href="#featured" data-i18n="nav_portfolio">Portfolio</a>
+                    <a href="#citizenship" data-i18n="nav_citizenship">Citizenship</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
-                    <a href="javascript:void(0)" onclick="openModal('legalModal')">Terms & Conditions</a>
-                    <a href="javascript:void(0)" onclick="openModal('legalModal')">Privacy Policy</a>
-                    <a href="javascript:void(0)" onclick="openModal('legalModal')">Legal Disclaimer</a>
+                    <h4 data-i18n="foot_legal">Legal</h4>
+                    <a href="javascript:void(0)" onclick="openModal('legalModal')" data-i18n="foot_tc">Terms & Conditions</a>
+                    <a href="javascript:void(0)" onclick="openModal('legalModal')" data-i18n="foot_disc">Legal Disclaimer</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Connect</h4>
-                    <a href="https://www.instagram.com/nobilistproperties" target="_blank">Instagram</a>
-                    <a href="https://wa.me/905300917796" target="_blank">WhatsApp Direct</a>
+                    <h4 data-i18n="foot_connect">Connect</h4>
+                    <a href="https://www.instagram.com/nobilistproperties" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://wa.me/905300917796" target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
                     <a href="mailto:advisory@nobilistproperties.com">Email Us</a>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p class="legal-sm">Information on this website is for general informational purposes only and does not constitute legal, financial, tax, or immigration advice. Property availability and pricing are subject to change without notice.</p>
+                <p class="legal-sm" data-i18n="foot_disclaimer">Information on this website is for general informational purposes only and does not constitute legal, financial, tax, or immigration advice.</p>
                 <p class="copyright">&copy; 2026 Nobilist Properties. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <div class="floating-actions">
-        <a href="https://wa.me/905300917796?text=Hello%20Nobilist%2C%20I%20would%20like%20to%20discuss%20real%20estate%20opportunities." target="_blank" class="fab fab-wa" title="WhatsApp Advisory">
+        <a href="https://wa.me/905300917796?text=Hello%20Nobilist%2C%20I%20would%20like%20to%20discuss%20real%20estate%20opportunities." target="_blank" rel="noopener noreferrer" class="fab fab-wa" title="WhatsApp Advisory">
             <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </a>
-        <a href="https://www.instagram.com/nobilistproperties" target="_blank" class="fab fab-ig" title="Instagram">
+        <a href="https://www.instagram.com/nobilistproperties" target="_blank" rel="noopener noreferrer" class="fab fab-ig" title="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         </a>
     </div>
@@ -292,7 +268,7 @@
         <div class="modal-overlay" onclick="closeModal('propertyModal')"></div>
         <div class="modal-content modal-lg">
             <button class="modal-close" onclick="closeModal('propertyModal')">&times;</button>
-            <div class="grid grid-2 no-gap h-100">
+            <div class="grid grid-2 no-gap h-100 align-center-modal">
                 <div class="modal-image">
                     <img id="pm-img" src="" alt="Property">
                 </div>
@@ -306,15 +282,15 @@
                         <div class="divider mt-3"></div>
                         
                         <div class="pm-specs mt-3 mb-3">
-                            <div><span class="label">Size</span> <span id="pm-size">Size</span></div>
-                            <div><span class="label">Status</span> <span>Available</span></div>
+                            <div><span class="label" data-i18n="mod_size">Size</span> <span id="pm-size">Size</span></div>
+                            <div><span class="label" data-i18n="mod_status">Status</span> <span data-i18n="mod_avail">Available</span></div>
                         </div>
                         
                         <p id="pm-desc" class="pm-desc">Description</p>
                         
                         <div class="modal-actions mt-4">
-                            <button class="btn-primary w-100 mb-2" onclick="openModal('contactModal'); closeModal('propertyModal')">Request Full Dossier</button>
-                            <a href="#" id="pm-wa-link" target="_blank" class="btn-outline w-100 text-center">Inquire via WhatsApp</a>
+                            <button class="btn-primary w-100 mb-2" onclick="openModal('contactModal'); closeModal('propertyModal')" data-i18n="mod_btn_dossier">Request Full Dossier</button>
+                            <a href="#" id="pm-wa-link" target="_blank" rel="noopener noreferrer" class="btn-outline w-100 text-center" data-i18n="mod_btn_wa">Inquire via WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -326,47 +302,25 @@
         <div class="modal-overlay" onclick="closeModal('contactModal')"></div>
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
-            <h2 class="section-title text-center">Private Inquiry</h2>
+            <h2 class="section-title text-center" data-i18n="mod_cont_title">Private Inquiry</h2>
             <div class="divider mx-auto mb-4"></div>
             <form onsubmit="validateAndSubmit(event, 'modalSuccess')">
                 <div class="input-line">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" data-i18n-placeholder="form_name" placeholder="Full Name" required>
                 </div>
                 <div class="input-line">
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="email" data-i18n-placeholder="form_email" placeholder="Email Address" required>
                 </div>
                 <div class="input-line">
-                    <input type="tel" placeholder="Phone / WhatsApp (Optional)">
+                    <input type="tel" data-i18n-placeholder="form_phone" placeholder="Phone / WhatsApp (Optional)">
                 </div>
                 <div class="input-line mt-3">
-                    <textarea rows="2" placeholder="How may we assist you?" required></textarea>
+                    <textarea rows="2" data-i18n-placeholder="form_msg2" placeholder="How may we assist you?" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary w-100 mt-4">Submit to Director</button>
+                <button type="submit" class="btn-primary w-100 mt-4" data-i18n="form_submit">Submit to Director</button>
             </form>
-            <div id="modalSuccess" class="form-success-msg text-center" style="display:none;">
+            <div id="modalSuccess" class="form-success-msg text-center" style="display:none;" data-i18n="form_success2">
                 Thank you. We will be in touch shortly.
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="investmentModal">
-        <div class="modal-overlay" onclick="closeModal('investmentModal')"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('investmentModal')">&times;</button>
-            <h2 class="section-title text-center">Citizenship Advisory</h2>
-            <div class="divider mx-auto mb-3"></div>
-            <p class="text-center mb-4" style="color:var(--text-muted); font-size: 0.95rem;">Request a private briefing regarding the Turkish Citizenship by Investment program, official thresholds, and eligible luxury assets.</p>
-            <form onsubmit="validateAndSubmit(event, 'invModalSuccess')">
-                <div class="input-line">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="input-line">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <button type="submit" class="btn-primary w-100 mt-4">Request Briefing</button>
-            </form>
-            <div id="invModalSuccess" class="form-success-msg text-center" style="display:none;">
-                Briefing request received.
             </div>
         </div>
     </div>
@@ -375,22 +329,15 @@
         <div class="modal-overlay" onclick="closeModal('legalModal')"></div>
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('legalModal')">&times;</button>
-            <h2 class="section-title">Legal & Compliance</h2>
+            <h2 class="section-title" data-i18n="mod_leg_title">Legal & Compliance</h2>
             <div class="divider mb-4"></div>
             <div class="legal-scroll">
                 <h4>1. No Legal or Financial Advice</h4>
                 <p>Nobilist Properties acts exclusively as a real estate advisory and brokerage entity. Content provided on this platform does not constitute binding legal, tax, financial, or immigration advice.</p>
-                
                 <h4>2. Citizenship & Immigration</h4>
-                <p>Data regarding the Turkish Citizenship by Investment program is generalized. Thresholds, valuation standards, and government regulations are subject to statutory amendments. We strongly advise retaining independent, licensed legal counsel for immigration filings.</p>
-                
-                <h4>3. Property Valuations & Availability</h4>
-                <p>Assets listed as "Off-Market" or "Price Upon Request" are subject to strict confidentiality agreements. Prices, dimensions, and availability are indicative and must be verified during formal due diligence.</p>
-                
-                <h4>4. Non-Guaranty of Returns</h4>
-                <p>Real estate markets are subject to macroeconomic fluctuations. Nobilist Properties provides no warranties regarding future capital appreciation, guaranteed rental yields, or the success of resale strategies.</p>
+                <p>Data regarding the Turkish Citizenship by Investment program is generalized. Thresholds, valuation standards, and government regulations are subject to statutory amendments.</p>
             </div>
-            <button class="btn-outline w-100 mt-4" onclick="closeModal('legalModal')">Acknowledge & Close</button>
+            <button class="btn-outline w-100 mt-4" onclick="closeModal('legalModal')" data-i18n="mod_leg_btn">Acknowledge & Close</button>
         </div>
     </div>
 
