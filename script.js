@@ -121,18 +121,15 @@ function applyLanguage(lang) {
     localStorage.setItem("nobilistLang", lang);
     const dict = translations[lang];
 
-    // Update document title
     if (dict['site_title']) {
         document.title = dict['site_title'];
     }
 
-    // Translate texts
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.innerHTML = dict[key];
     });
 
-    // Translate placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (dict[key]) el.placeholder = dict[key];
@@ -140,10 +137,8 @@ function applyLanguage(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Check local storage for language
     const savedLang = localStorage.getItem("nobilistLang") || "en";
     
-    // Set UI buttons active state on load
     const langBtns = document.querySelectorAll('.lang-btn, .lang-btn-mob');
     langBtns.forEach(b => {
         if(b.getAttribute('data-lang') === savedLang) b.classList.add('active');
@@ -152,14 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     applyLanguage(savedLang);
 
-    // Sticky Header
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 80) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
     });
 
-    // Scroll Animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
 
@@ -173,7 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // Language Switcher Events
     langBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const selectedLang = e.target.getAttribute('data-lang');
@@ -186,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Mobile Menu
 function toggleMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -201,7 +192,6 @@ function toggleMobileMenu() {
     }
 }
 
-// Modals
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if(modal) {
@@ -218,7 +208,6 @@ function closeModal(modalId) {
     }
 }
 
-// Dynamic Property Modal
 function openPropertyModal(title, loc, price, type, size, desc, imgSrc) {
     document.getElementById('pm-title').innerText = title;
     document.getElementById('pm-loc').innerText = loc;
@@ -236,7 +225,6 @@ function openPropertyModal(title, loc, price, type, size, desc, imgSrc) {
     openModal('propertyModal');
 }
 
-// Form Submission
 function validateAndSubmit(event, successDivId) {
     event.preventDefault(); 
     const form = event.target;
